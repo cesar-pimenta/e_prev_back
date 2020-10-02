@@ -4,7 +4,7 @@ from rest_framework import serializers
 class ItemSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Item
-        fields = ['order','product']
+        fields = ['id','order','product']
 
 
 class OrderSerializer(serializers.HyperlinkedModelSerializer):
@@ -12,5 +12,5 @@ class OrderSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Order
-        fields = ['owner','date_order', 'url', 'item_set']
+        fields = ['id','owner','date_order', 'url', 'item_set']
 
