@@ -9,7 +9,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['localhost', '54.172.198.86']
+ALLOWED_HOSTS = ['54.172.198.86', 'localhost', '127.0.0.1' ]
 
 
 # Application definition
