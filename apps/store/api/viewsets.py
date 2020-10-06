@@ -13,10 +13,8 @@ class OrderViewSet(viewsets.ModelViewSet):
     authentication_classes = [authentication.TokenAuthentication, authentication.SessionAuthentication]
     filter_backends = (DjangoFilterBackend, SearchFilter)
 
-    # Permite que seja filtrado por nome e descricao
     filter_fields = ('owner',)
 
-    # Permite que seja feita uma busca por nome e descricao
     search_fields = ('owner', )
 
 
@@ -24,40 +22,27 @@ class OrderViewSet(viewsets.ModelViewSet):
         return Order.objects.all()
 
     def list(self, request, *args, **kwargs):
-        """
-        Função nativa que pode ser sobrescrita, quando a API recebe um GET para listar nesse endpoint,
-        essa função é responsável por devolver os objetos
-        """
+
         return super().list(request, *args, **kwargs)
 
     def create(self, request, *args, **kwargs):
-        """
-        Função nativa responsavel pelo metodo POST, pode ser sobrescrita.
-        """
+
         return super().create(request, *args, **kwargs)
 
     def destroy(self, request, *args, **kwargs):
-        """
-        Função nativa responsável pelo método DELETE, pode ser sobrescrita.
-        """
+
         return super().destroy(request, *args, **kwargs)
 
     def retrieve(self, request, *args, **kwargs):
-        """
-        Função nativa responsavel pelo metodo GET porem de um recurso específico
-        """
+
         return super().retrieve(request, *args, **kwargs)
 
     def update(self, request, *args, **kwargs):
-        """
-        Função nativa responsavel pelo metodo PUT, atualiza um recurso específico
-        """
+
         return super().update(request, *args, **kwargs)
 
     def partial_update(self, request, *args, **kwargs):
-        """
-        Função nativa responsavel pelo metodo PATCH, atualiza uma parte de um recurso específico
-        """
+
         return super().partial_update(request, *args, **kwargs)
 
  
